@@ -4,13 +4,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-
 body {
   font-family: 'Poppins', 'Inter', sans-serif;
   background: radial-gradient(1200px at 8% 12%, rgba(99, 102, 241, 0.12), transparent 55%),
     #080a1c;
   color: #e9ecff;
+   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 
@@ -1184,7 +1186,7 @@ body {
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
   box-shadow: 0 10px 30px rgba(111, 139, 255, 0.35);
 }
 
@@ -1194,7 +1196,7 @@ body {
 
 .btn:hover {
   transform: translateY(-2px);
-  color: linear-gradient(120deg, #6f8bff, #8097ff);
+  color: #6f8bff;
   filter: brightness(1.05);
   box-shadow: 0 14px 36px rgba(111, 139, 255, 0.45);
 }
@@ -1210,6 +1212,7 @@ body {
   font-size: 0.95rem;
   border-radius: 12px;
   color: #ffffff;
+  z-index: 1;
   box-shadow: 0 10px 26px rgba(111, 139, 255, 0.35);
 }
 
@@ -1219,7 +1222,7 @@ body {
   inset: 0;
   background: #ffffff;
   transform: translateX(-105%);
-  transition: transform 0.35s ease;
+  transition: transform 0.5s ease;
   z-index: 0;
 }
 
@@ -1236,7 +1239,7 @@ body {
 .navbar .btn svg,
 .navbar .btn {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 @media (max-width: 768px) {
   .hero {
