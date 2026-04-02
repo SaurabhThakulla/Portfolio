@@ -76,8 +76,8 @@ const About = () => {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.35 }}
                     >
-                        <button className="btn outline">Contact Me</button>
-                        <button className="btn primary">Hire Now</button>
+                        <button className="btn outline"><span>Contact Me</span></button>
+                        <button className="btn primary"><span>Hire Now</span></button>
                     </motion.div>
                 </div>
             </div>
