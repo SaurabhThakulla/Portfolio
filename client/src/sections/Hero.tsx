@@ -42,7 +42,7 @@ const Hero = () => {
 
     const fadeUp = {
         hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, easeOut: true } },
     };
 
     return (
@@ -83,7 +83,7 @@ const Hero = () => {
                                 strokeLinejoin="round"
                             />
                         </svg>
-                        Download CV
+                        <span>Download CV</span>
                     </button>
                 </div>
 
