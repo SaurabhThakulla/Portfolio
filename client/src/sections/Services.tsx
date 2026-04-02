@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { FiCode, FiCpu, FiMonitor, FiBookOpen } from "react-icons/fi";
 
@@ -15,46 +15,102 @@ const categories = [
 ];
 
 const services = [
+  // Software (3)
   {
     title: "Software Engineering",
     tag: "FEATURED",
     description: "Robust systems, clean patterns, testing-first delivery.",
     featured: true,
+    category: "software",
   },
+  {
+    title: "Platform Architecture",
+    tag: "FEATURED",
+    description: "Domain models, modular monoliths, and event-driven designs that scale.",
+    featured: true,
+    category: "software",
+  },
+  {
+    title: "System Integration",
+    tag: "AVAILABLE",
+    description: "Connecting products with clean APIs, contracts, and backward compatibility.",
+    featured: false,
+    category: "software",
+  },
+  // Fullstack (3)
   {
     title: "Fullstack Development",
     tag: "FEATURED",
     description: "Responsive web apps, TypeScript frontends and secure APIs.",
     featured: true,
+    category: "fullstack",
   },
+  {
+    title: "API Design & Integration",
+    tag: "AVAILABLE",
+    description: "REST/GraphQL APIs, versioning, testing, and documentation your team can trust.",
+    featured: false,
+    category: "fullstack",
+  },
+  {
+    title: "Frontend Performance",
+    tag: "AVAILABLE",
+    description: "Snappy UX: code-splitting, caching, and Core Web Vitals optimization.",
+    featured: false,
+    category: "fullstack",
+  },
+  // DevOps (3)
   {
     title: "DevOps & Cloud",
     tag: "AVAILABLE",
     description: "CI/CD, IaC, containers, observability, zero-downtime releases.",
     featured: false,
-  },
-  {
-    title: "AI / ML Engineering",
-    tag: "AVAILABLE",
-    description: "LLM apps, retrieval, evaluation, and production MLOps pipelines.",
-    featured: false,
+    category: "devops",
   },
   {
     title: "Platform Reliability",
     tag: "AVAILABLE",
     description: "24/7 monitoring, incident response, SLOs, and resilience testing.",
     featured: false,
+    category: "devops",
   },
   {
-    title: "System Integration",
+    title: "CI/CD Automation",
     tag: "AVAILABLE",
-    description: "Connecting services with clean contracts and event-driven workflows.",
+    description: "Pipelines, quality gates, and release strategies for fast safe shipping.",
     featured: false,
+    category: "devops",
+  },
+  // AI / ML (3)
+  {
+    title: "AI / ML Engineering",
+    tag: "AVAILABLE",
+    description: "LLM apps, retrieval, evaluation, and production MLOps pipelines.",
+    featured: false,
+    category: "ai",
+  },
+  {
+    title: "LLM Apps & RAG",
+    tag: "AVAILABLE",
+    description: "Retrieval, evaluation, safety, and latency tuning for production LLM apps.",
+    featured: false,
+    category: "ai",
+  },
+  {
+    title: "MLOps Pipelines",
+    tag: "AVAILABLE",
+    description: "Data versioning, model registry, feature stores, and automated rollouts.",
+    featured: false,
+    category: "ai",
   },
 ];
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState<string>(categories[0].key);
+  const filteredServices = useMemo(
+    () => services.filter((svc) => svc.category === activeTab),
+    [activeTab]
+  );
 
   return (
     <motion.section
@@ -88,7 +144,7 @@ const Services = () => {
       </div>
 
       <div className="services-grid">
-        {services.map((svc, idx) => (
+        {filteredServices.map((svc, idx) => (
           <motion.div
             key={svc.title}
             className="service-card"
