@@ -759,7 +759,7 @@ body {
   background-size: cover;
   background-position: center;
   border-radius: inherit;
-  transition: transform 0.7s ease;
+  transition: transform 1.05s ease;
 }
 
 .project-card::after {
@@ -778,11 +778,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   opacity: 0;
   transform: translateY(6px) scale(0.99);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.85s ease, transform 0.85s ease;
   border-radius: inherit;
 }
 
@@ -817,6 +817,7 @@ body {
   font-size: 1.1rem;
   box-shadow: 0 10px 24px rgba(111, 139, 255, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .project-links a:hover {
@@ -1194,29 +1195,13 @@ body {
   color: #fff;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  color: #6f8bff;
-  filter: brightness(1.05);
-  box-shadow: 0 14px 36px rgba(111, 139, 255, 0.45);
-}
-
-.btn-icon {
-  display: inline-block;
-}
-
-.navbar .btn {
+.btn:not(.outline) {
   position: relative;
   overflow: hidden;
-  padding: 0.7rem 1.5rem;
-  font-size: 0.95rem;
-  border-radius: 12px;
-  color: #ffffff;
   z-index: 1;
-  box-shadow: 0 10px 26px rgba(111, 139, 255, 0.35);
 }
 
-.navbar .btn::after {
+.btn:not(.outline)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1226,8 +1211,40 @@ body {
   z-index: 0;
 }
 
-.navbar .btn:hover::after {
+.btn:not(.outline):hover::after {
   transform: translateX(0);
+}
+
+.btn:not(.outline) span,
+.btn:not(.outline) svg,
+.btn:not(.outline) {
+  position: relative;
+  z-index: 2;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  color: #6f8bff;
+  filter: brightness(1.05);
+  box-shadow: 0 14px 36px rgba(111, 139, 255, 0.45);
+}
+
+.btn:not(.outline):hover {
+  color: #6f8bff;
+}
+
+.btn:not(.outline):hover span,
+.btn:not(.outline):hover svg {
+  color: #6f8bff;
+}
+
+.btn-icon {
+  display: inline-block;
+}
+
+.navbar .btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
 }
 
 .navbar .btn:hover {
@@ -1235,12 +1252,6 @@ body {
   transform: translateY(-1px);
 }
 
-.navbar .btn span,
-.navbar .btn svg,
-.navbar .btn {
-  position: relative;
-  z-index: 2;
-}
 @media (max-width: 768px) {
   .hero {
     padding: 0 1.5rem;
