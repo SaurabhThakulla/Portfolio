@@ -26,7 +26,7 @@ const Contact = () => {
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Email Address" required />
         <textarea name="message" rows={6} placeholder="Write Your Message" required />
-        <button type="submit" className="btn primary">Submit</button>
+        <button type="submit" className="btn primary"><span>Submit</span></button>
       </form>
     </motion.section>
   );
