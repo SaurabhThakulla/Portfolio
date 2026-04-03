@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, type FormEvent } from "react";
 
 const fade = {
   hidden: { opacity: 0, y: 30, scale: 0.98 },
@@ -6,6 +7,47 @@ const fade = {
 };
 
 const Contact = () => {
+  const [status, setStatus] = useState<{ state: "idle" | "loading" | "success" | "error"; message: string }>({
+    state: "idle",
+    message: "",
+  });
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+
+    if (!accessKey) {
+      setStatus({ state: "error", message: "Missing Web3Forms key. Add VITE_WEB3FORMS_KEY in your .env." });
+      return;
+    }
+
+    setStatus({ state: "loading", message: "Sending..." });
+
+    try {
+      const formData = new FormData(form);
+      formData.append("access_key", accessKey);
+      formData.append("subject", "New portfolio contact");
+      formData.append("from_name", "Portfolio Contact Form");
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus({ state: "success", message: "Message sent! I’ll reply soon." });
+        form.reset();
+      } else {
+        throw new Error(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      setStatus({ state: "error", message: "Send failed. Please try again." });
+    }
+  };
+
   return (
     <motion.section
       className="contact"
@@ -22,11 +64,18 @@ const Contact = () => {
         <p>Got a project, collaboration, or question? Drop a note and I&apos;ll respond quickly.</p>
       </div>
 
-      <form className="contact-form">
+      <form className="contact-form" onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Email Address" required />
         <textarea name="message" rows={6} placeholder="Write Your Message" required />
-        <button type="submit" className="btn primary"><span>Submit</span></button>
+        <button type="submit" className="btn primary" disabled={status.state === "loading"}>
+          <span>{status.state === "loading" ? "Sending..." : "Submit"}</span>
+        </button>
+        {status.message && (
+          <p className={`contact-status ${status.state}`}>
+            {status.message}
+          </p>
+        )}
       </form>
     </motion.section>
   );
