@@ -8,22 +8,22 @@ const fade = {
 
 const projects = [
   {
-    title: "Fintech Mobile Banking",
+    title: "Aura (Social Media App)",
     image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80",
-    github: "https://github.com/placeholder/fintech",
-    live: "https://example.com/fintech",
+    github: "https://github.com/SaurabhThakulla/Social_App",
+    live: "https://social-app-green-chi.vercel.app",
   },
   {
-    title: "AI Support Dashboard",
+    title: "Chat App (Real-time Messaging)",
     image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
-    github: "https://github.com/placeholder/ai-dashboard",
-    live: "https://example.com/ai-dashboard",
+    github: "https://github.com/SaurabhThakulla/Chat-App",
+    live: "https://github.com/SaurabhThakulla/Chat-App",
   },
   {
     title: "Cloud Commerce Suite",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
-    github: "https://github.com/placeholder/commerce",
-    live: "https://example.com/commerce",
+    github: "https://github.com/SaurabhThakulla/Cloud-Commerce-Suite",
+    live: "https://github.com/SaurabhThakulla/Cloud-Commerce-Suite",
   },
 ];
 
@@ -61,10 +61,22 @@ const Projects = () => {
             ></div>
             <div className="project-overlay">
               <div className="project-links">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  style={{ cursor: "pointer" }}
+                >
                   <FiGithub />
                 </a>
-                <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Live demo"
+                  style={{ cursor: "pointer" }}
+                >
                   <FiExternalLink />
                 </a>
               </div>
