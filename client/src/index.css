@@ -834,6 +834,55 @@ body {
   padding: 0 16px;
 }
 
+@media (max-width: 900px) {
+  .projects {
+    padding: 80px 1.5rem 90px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .project-card {
+    min-height: 230px;
+  }
+
+  .project-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-header p {
+    font-size: 0.95rem;
+  }
+
+  .project-card {
+    min-height: 180px;
+  }
+
+  .project-overlay {
+    gap: 10px;
+  }
+
+  .project-links {
+    gap: 10px;
+  }
+
+  .project-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+  }
+}
+
 /* CONTACT */
 .contact {
   position: relative;
