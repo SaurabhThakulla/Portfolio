@@ -768,6 +768,7 @@ body {
   inset: 0;
   background: linear-gradient(180deg, rgba(8, 10, 28, 0) 40%, rgba(8, 10, 28, 0.55));
   border-radius: inherit;
+  pointer-events: none; /* let overlay links stay clickable */
 }
 
 .project-overlay {
@@ -784,6 +785,7 @@ body {
   transform: translateY(6px) scale(0.99);
   transition: opacity 0.85s ease, transform 0.85s ease;
   border-radius: inherit;
+  z-index: 1; /* sit above the decorative ::after layer */
 }
 
 .project-card:hover .project-overlay {
