@@ -881,6 +881,11 @@ body {
   .project-title {
     font-size: 0.95rem;
   }
+
+  /* Hide the first project card on very small screens to reduce load and clutter */
+  .project-grid .project-card:first-child {
+    display: none;
+  }
 }
 
 /* CONTACT */
@@ -957,6 +962,21 @@ body {
 .contact-form .btn.primary {
   align-self: center;
   margin-top: 8px;
+}
+
+.contact-status {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.contact-status.success {
+  color: #3ad29f;
+}
+
+.contact-status.error {
+  color: #ff6b6b;
 }
 
 /* FOOTER */
@@ -1314,13 +1334,28 @@ body {
   }
 
   .hero-figure {
+    display: none; /* hide hero image on small screens */
+  }
+
+  .hero-content {
+    text-align: center;
     justify-self: center;
-    width: min(360px, 76vw);
-    margin-top: 1rem;
   }
 
   .hero-title {
     font-size: 2.4rem;
+  }
+
+  .hero-sub {
+    margin-inline: auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
   }
 
   .about {
@@ -1337,14 +1372,5 @@ body {
 
   .about-photo {
     max-width: 320px;
-  }
-}
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .sidebar {
-    display: none;
   }
 }
