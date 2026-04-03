@@ -5,10 +5,9 @@ import {
     FaFacebook,
     FaYoutube,
     FaCodepen,
-    FaSnapchatGhost,
     FaDiscord,
 } from "react-icons/fa";
-import { SiLeetcode, SiTiktok } from "react-icons/si";
+import { SiLeetcode } from "react-icons/si";
 import { FiCode } from "react-icons/fi";
 
 const Sidebar = () => {
@@ -29,7 +28,7 @@ const Sidebar = () => {
 
                 <li>
                     <a
-                        href="in/saurabh-thakulla-b057502ab"
+                        href="https://www.linkedin.com/in/saurabh-thakulla-b057502ab"
                         target="_blank"
                         rel="noopener noreferrer"
                         title="LinkedIn"
