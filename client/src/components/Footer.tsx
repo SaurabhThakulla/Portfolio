@@ -3,7 +3,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-inner">
         <span className="footer-logo">Saurabh</span>
-        <span className="footer-text">© {new Date().getFullYear()} • Crafting code & design with care.</span>
+        <span className="footer-text">
+          Â© {new Date().getFullYear()} â€¢ Crafting code & design with care.
+        </span>
         <div className="footer-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
