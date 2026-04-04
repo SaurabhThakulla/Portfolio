@@ -1328,6 +1328,14 @@ body {
     padding-bottom: 120px; /* leave space so the bottom bar doesn't cover content */
   }
 
+  .about,
+  .services,
+  .skills,
+  .projects,
+  .contact {
+    overflow: hidden; /* prevent oversized ghost titles from causing horizontal scroll */
+  }
+
   .hero {
     padding: 0 1.5rem;
   }
@@ -1339,6 +1347,13 @@ body {
 
   .hero-figure {
     display: none; /* hide hero image on small screens */
+  }
+
+  .hero-ghost-text {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(3.6rem, 22vw, 6.4rem);
+    letter-spacing: 0.5rem;
   }
 
   .hero-content {
@@ -1361,10 +1376,10 @@ body {
   .sidebar {
     top: auto;
     bottom: 18px;
-    left: 45%;
+    left: 50%;
     right: auto;
     transform: translateX(-50%);
-    width: min(400px, calc(100% - 32px));
+    width: min(520px, calc(100% - 32px));
     padding: 10px 12px;
     border-radius: 16px;
     display: block;
@@ -1391,7 +1406,10 @@ body {
   }
 
   .about-bg {
-    left: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(3.4rem, 18vw, 6.5rem);
+    letter-spacing: 0.25rem;
   }
 
   .about-grid {
@@ -1400,5 +1418,13 @@ body {
 
   .about-photo {
     max-width: 320px;
+  }
+
+  .services-bg,
+  .skills-bg,
+  .projects-bg,
+  .contact-bg {
+    font-size: clamp(3.4rem, 18vw, 6.5rem);
+    letter-spacing: 0.25rem;
   }
 }
