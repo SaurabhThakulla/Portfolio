@@ -1355,6 +1355,30 @@ body {
   }
 
   .sidebar {
+    top: auto;
+    bottom: 18px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(520px, calc(100% - 32px));
+    padding: 12px 14px;
+    border-radius: 16px;
+    display: block;
+  }
+
+  .sidebar ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .sidebar a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar a::after {
     display: none;
   }
 
