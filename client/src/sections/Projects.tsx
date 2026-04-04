@@ -85,6 +85,22 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
+
+      <div className="project-sponsor-banner">
+        <div className="pill pill-sm">Partner</div>
+        <div>
+          <h3>Powered by Vercel Edge</h3>
+          <p>Fast, globally distributed deploys—the same platform serving this portfolio.</p>
+        </div>
+        <a
+          href="https://vercel.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn outline"
+        >
+          Explore
+        </a>
+      </div>
     </motion.section>
   );
 };
