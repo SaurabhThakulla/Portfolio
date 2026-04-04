@@ -1324,6 +1324,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 120px; /* leave space so the bottom bar doesn't cover content */
+  }
+
   .hero {
     padding: 0 1.5rem;
   }
@@ -1357,11 +1361,11 @@ body {
   .sidebar {
     top: auto;
     bottom: 18px;
-    left: 50%;
+    left: 45%;
     right: auto;
     transform: translateX(-50%);
-    width: min(520px, calc(100% - 32px));
-    padding: 12px 14px;
+    width: min(400px, calc(100% - 32px));
+    padding: 10px 12px;
     border-radius: 16px;
     display: block;
   }
