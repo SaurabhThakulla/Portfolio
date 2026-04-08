@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import AdBanner from "../components/Adbaner";
 
 const fade = {
   hidden: { opacity: 0, y: 30, scale: 0.98 },
@@ -86,21 +87,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="project-sponsor-banner">
-        <div className="pill pill-sm">Partner</div>
-        <div>
-          <h3>Powered by Vercel Edge</h3>
-          <p>Fast, globally distributed deploys—the same platform serving this portfolio.</p>
-        </div>
-        <a
-          href="https://vercel.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn outline"
-        >
-          Explore
-        </a>
-      </div>
+     <AdBanner />
     </motion.section>
   );
 };
