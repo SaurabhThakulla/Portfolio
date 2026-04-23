@@ -44,13 +44,13 @@ const About = () => {
                     >
                         <span className="pill pill-sm">Bio</span>
                         <p>
-                            Hey there! I am Saurabh, a tech-savvy and creative powerhouse blending software engineering. I love
-                            crafting smooth experiences�whether it&apos;s coding full stack apps, automating workflows, or designing
-                            eye-catching visuals.
+                            I am Saurabh, a software engineer who enjoys turning ambitious ideas into clean, usable products. My
+                            sweet spot is blending frontend polish with backend reliability so the final experience looks sharp and
+                            works under pressure.
                         </p>
                         <p>
-                            I&apos;m always hunting for the next challenge and new things to learn. Let&apos;s build something memorable
-                            together!
+                            I care about maintainable code, thoughtful design, and shipping work that feels memorable the first time
+                            someone uses it. If you need a builder who can move from concept to launch, I am ready.
                         </p>
                     </motion.div>
 
@@ -61,12 +61,12 @@ const About = () => {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.35 }}
                     >
-                        <div><strong>Birthday:</strong> Oct 9</div>
-                        <div><strong>Nationality:</strong> Nepali</div>
-                        <div><strong>Phone:</strong> +911 9373532312</div>
-                        <div><strong>Email:</strong> Saurabhthakulla6@gmail.com</div>
-                        <div><strong>Address:</strong> Tikapur, Nepal</div>
-                        <div><strong>Role:</strong> Software Engineer</div>
+                        <div><strong>Birthday</strong>Oct 9</div>
+                        <div><strong>Nationality</strong>Nepali</div>
+                        <div><strong>Phone</strong>+91 9373532312</div>
+                        <div><strong>Email</strong>Saurabhthakulla6@gmail.com</div>
+                        <div><strong>Address</strong>Tikapur, Nepal</div>
+                        <div><strong>Role</strong>Software Engineer</div>
                     </motion.div>
 
                     <motion.div
@@ -76,8 +76,8 @@ const About = () => {
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.35 }}
                     >
-                        <button className="btn outline"><span>Contact Me</span></button>
-                        <button className="btn primary"><span>Hire Now</span></button>
+                        <a className="btn outline" href="#projects"><span>See My Work</span></a>
+                        <a className="btn primary" href="#contact"><span>Hire Me</span></a>
                     </motion.div>
                 </div>
             </div>
@@ -106,7 +106,7 @@ const About = () => {
   if (coffee.level === 0) throw new Error("refuel");
 }
 
-// — Saurabh`}
+// -- Saurabh`}
                     </pre>
                 </div>
 

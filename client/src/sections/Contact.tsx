@@ -38,12 +38,12 @@ const Contact = () => {
       const data = await res.json();
 
       if (data.success) {
-        setStatus({ state: "success", message: "Message sent! I’ll reply soon." });
+        setStatus({ state: "success", message: "Message sent. I will reply soon." });
         form.reset();
       } else {
         throw new Error(data.message || "Something went wrong");
       }
-    } catch (error) {
+    } catch {
       setStatus({ state: "error", message: "Send failed. Please try again." });
     }
   };
@@ -60,16 +60,16 @@ const Contact = () => {
       <div className="contact-bg">CONTACT</div>
       <div className="contact-header">
         <span className="pill">Let&apos;s Talk</span>
-        <h2>Contact Me</h2>
-        <p>Got a project, collaboration, or question? Drop a note and I&apos;ll respond quickly.</p>
+        <h2>Ready to Build Something Strong?</h2>
+        <p>Share your idea, product, or collaboration plan and I will get back to you with a clear next step.</p>
       </div>
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Email Address" required />
-        <textarea name="message" rows={6} placeholder="Write Your Message" required />
+        <textarea name="message" rows={6} placeholder="Tell me about your project" required />
         <button type="submit" className="btn primary" disabled={status.state === "loading"}>
-          <span>{status.state === "loading" ? "Sending..." : "Submit"}</span>
+          <span>{status.state === "loading" ? "Sending..." : "Send Message"}</span>
         </button>
         {status.message && (
           <p className={`contact-status ${status.state}`}>

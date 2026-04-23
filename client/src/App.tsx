@@ -10,17 +10,26 @@ import Footer from "./components/Footer";
 
 function App(){
   return (
-    <>
+    <div className="app-shell">
+      <div className="app-shell__bg" aria-hidden="true">
+        <span className="app-shell__grid"></span>
+        <span className="app-shell__glow app-shell__glow--one"></span>
+        <span className="app-shell__glow app-shell__glow--two"></span>
+        <span className="app-shell__glow app-shell__glow--three"></span>
+      </div>
+
       <Navbar />
       <Sidebar />
-      <Hero />
-      <About />
-      <Services />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main className="page-content">
+        <Hero />
+        <About />
+        <Services />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { FiCode, FiCpu, FiMonitor, FiBookOpen } from "react-icons/fi";
+import { FiBookOpen, FiCode, FiCpu, FiMonitor } from "react-icons/fi";
 
 const fade = {
   hidden: { opacity: 0, y: 30, scale: 0.98 },
@@ -15,7 +15,6 @@ const categories = [
 ];
 
 const services = [
-  // Software (3)
   {
     title: "Software Engineering",
     tag: "FEATURED",
@@ -37,7 +36,6 @@ const services = [
     featured: false,
     category: "software",
   },
-  // Fullstack (3)
   {
     title: "Fullstack Development",
     tag: "FEATURED",
@@ -59,7 +57,6 @@ const services = [
     featured: false,
     category: "fullstack",
   },
-  // DevOps (3)
   {
     title: "DevOps & Cloud",
     tag: "AVAILABLE",
@@ -81,7 +78,6 @@ const services = [
     featured: false,
     category: "devops",
   },
-  // AI / ML (3)
   {
     title: "AI / ML Engineering",
     tag: "AVAILABLE",
@@ -162,14 +158,14 @@ const Services = () => {
           >
             <div className="service-card__top">
               <h3>{svc.title}</h3>
-              {svc.featured && <span className="service-star">★</span>}
+              {svc.featured && <span className="service-star">*</span>}
             </div>
             <p className="service-card__desc">{svc.description}</p>
             <div className="service-card__cta">
               <span className={`service-chip ${svc.tag === "FEATURED" ? "chip-hot" : "chip-cool"}`}>
                 {svc.tag}
               </span>
-              <span className="arrow">→</span>
+              <span className="arrow">-&gt;</span>
             </div>
           </motion.div>
         ))}

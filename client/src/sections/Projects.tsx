@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import AdBanner from "../components/Adbaner";
 
 const fade = {
@@ -9,19 +9,25 @@ const fade = {
 
 const projects = [
   {
-    title: "Aura (Social Media App)",
+    title: "Aura Social Platform",
+    summary: "A modern social product with strong UI rhythm, community flows, and polished interaction design.",
+    stack: "React / Node",
     image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80",
     github: "https://github.com/SaurabhThakulla/Social_App",
     live: "https://social-app-green-chi.vercel.app",
   },
   {
-    title: "Chat App (Real-time Messaging)",
+    title: "Realtime Chat Experience",
+    summary: "Fast messaging with live updates, room-based collaboration, and a cleaner communication flow.",
+    stack: "Sockets / TS",
     image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
     github: "https://github.com/SaurabhThakulla/Chat-App",
     live: "https://github.com/SaurabhThakulla/Chat-App",
   },
   {
     title: "Cloud Commerce Suite",
+    summary: "A scalable commerce concept focused on cloud readiness, modular architecture, and smooth customer journeys.",
+    stack: "Cloud / API",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
     github: "https://github.com/SaurabhThakulla/Cloud-Commerce-Suite",
     live: "https://github.com/SaurabhThakulla/Cloud-Commerce-Suite",
@@ -41,8 +47,8 @@ const Projects = () => {
       <div className="projects-bg">PORTFOLIO</div>
       <div className="projects-header">
         <span className="pill">Latest Work</span>
-        <h2>My Projects</h2>
-        <p>Three snapshots of recent builds. Hover to jump into code or a live preview.</p>
+        <h2>Featured Projects</h2>
+        <p>Recent builds that combine product thinking, frontend craft, and production-focused engineering.</p>
       </div>
 
       <div className="project-grid">
@@ -61,13 +67,15 @@ const Projects = () => {
               style={{ backgroundImage: `url(${project.image})` }}
             ></div>
             <div className="project-overlay">
+              <span className="project-stack">{project.stack}</span>
+              <span className="project-title">{project.title}</span>
+              <p className="project-summary">{project.summary}</p>
               <div className="project-links">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  style={{ cursor: "pointer" }}
+                  aria-label={`${project.title} GitHub`}
                 >
                   <FiGithub />
                 </a>
@@ -75,19 +83,17 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Live demo"
-                  style={{ cursor: "pointer" }}
+                  aria-label={`${project.title} live demo`}
                 >
                   <FiExternalLink />
                 </a>
               </div>
-              <span className="project-title">{project.title}</span>
             </div>
           </motion.div>
         ))}
       </div>
 
-     <AdBanner />
+      <AdBanner />
     </motion.section>
   );
 };

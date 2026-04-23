@@ -47,7 +47,7 @@ const Hero = () => {
 
     return (
         <section className="hero" id="home" ref={heroRef}>
-            <div className="hero-ghost-text">HELLO</div>
+            <div className="hero-ghost-text">LEVEL UP</div>
 
             <motion.div
                 className="hero-grid"
@@ -57,34 +57,29 @@ const Hero = () => {
                 viewport={{ once: false, amount: 0.4 }}
             >
                 <div className="hero-content">
-                    <p className="hero-kicker">I&apos;M</p>
+                    <p className="hero-kicker">Neon-ready product engineer</p>
                     <h1 className="hero-title">
                         Saurabh <span>Thakulla</span>
                     </h1>
 
                     <p className="hero-sub">
-                        Software Engineer <span>|</span> Frontend Specialist <span>|</span> Backend Expert <span>|</span> DSA Enthusiast <span>|</span> Tech Explorer
+                        I design polished frontend experiences, dependable backend systems, and AI-powered workflows that feel fast, modern, and production-ready.
                     </p>
 
-                    <button className="btn primary">
-                        <svg
-                            className="btn-icon"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M12 3v14m0 0l-4.5-4.5M12 17l4.5-4.5M5 20h14"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
-                        <span>Download CV</span>
-                    </button>
+                    <div className="hero-actions">
+                        <a className="btn primary" href="#projects">
+                            <span>View Projects</span>
+                        </a>
+                        <a className="btn outline" href="#contact">
+                            <span>Start a Project</span>
+                        </a>
+                    </div>
+
+                    <div className="hero-badges">
+                        <span>Frontend systems</span>
+                        <span>Backend architecture</span>
+                        <span>Devops</span>
+                    </div>
                 </div>
 
                 <motion.div
@@ -96,7 +91,7 @@ const Hero = () => {
                 >
                     <div className="hero-figure__halo"></div>
                     <div className="hero-figure__img">
-                        <img src={img} alt="Aashis Jha" />
+                        <img src={img} alt="Saurabh Thakulla portrait" />
                     </div>
                     <div className="hero-figure__ink hero-figure__ink--orange"></div>
                     <div className="hero-figure__ink hero-figure__ink--blue"></div>
