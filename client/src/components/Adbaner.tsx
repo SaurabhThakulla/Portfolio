@@ -18,7 +18,11 @@ function SponsorAd() {
 
   return (
     <div className="project-sponsor-banner">
-      <div className="pill pill-sm">Sponsored</div>
+      <div>
+        <div className="pill pill-sm">Sponsored</div>
+        <h3>Partner Spotlight</h3>
+        <p>Reserved for brand collaborations, product partners, or campaign placements.</p>
+      </div>
 
       <div style={{ width: "100%" }}>
         <ins
