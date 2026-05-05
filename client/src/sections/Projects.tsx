@@ -25,12 +25,12 @@ const projects = [
     live: "https://github.com/SaurabhThakulla/Chat-App",
   },
   {
-    title: "Cloud Commerce Suite",
-    summary: "A scalable commerce concept focused on cloud readiness, modular architecture, and smooth customer journeys.",
+    title: "Koda",
+    summary: "Koda is a real-time collaborative code editor that enables multiple users to write and edit code simultaneously with minimal latency.",
     stack: "Cloud / API",
     image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
-    github: "https://github.com/SaurabhThakulla/Cloud-Commerce-Suite",
-    live: "https://github.com/SaurabhThakulla/Cloud-Commerce-Suite",
+    github: "https://github.com/SaurabhThakulla/Koda",
+    live: "#",
   },
 ];
 
@@ -92,7 +92,6 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
-
       <AdBanner />
     </motion.section>
   );
