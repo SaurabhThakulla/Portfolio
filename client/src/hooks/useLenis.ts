@@ -6,13 +6,7 @@ export const useLenis = () => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      smoothTouch: true,
-      touchMultiplier: 2,
-      wheelMultiplier: 1,
-      infinite: false,
+      lerp: 0.1,
     });
 
     const raf = (time: number) => {
